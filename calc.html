@@ -1,0 +1,67 @@
+<html>
+<head>
+	<style>
+		button {
+			color: white;
+			background-color:black;
+			align:center;
+		}
+	</style>
+</head>
+<body>
+	<div align = "center">
+		<input type="text" id="d">
+	</div>
+	<div align="center" id="keys">
+	<p>
+		<button>7</button>
+		<button>8</button>
+		<button>9</button>
+		<button>*</button>
+	</p>	
+		<button>4</button>
+		<button>5</button>
+		<button>6</button>
+		<button>-</button>
+	<p>	
+		<button>1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>+</button>
+	</p>
+	<p>
+		<button>0</button>
+		<button>C</button>
+		<button>S</button>
+		<button>=</button>
+	</p>
+	</div>
+	<script>
+		var d = document.getElementById("d");
+		var keys = document.getElementById("keys");
+		keys.addEventListener("click",calc);
+		function calc (e){
+			var val = e.target.innerText;
+			if (val.length > 1){
+				return;
+				
+			}	
+			if (val === "="){
+				d.value = eval(d.value);
+				return;
+			}
+			if (val === "C"){
+				d.value = "";
+				return;
+			}
+			if (val === "S"){
+				d.value = Math.sqrt(d.value*1);
+				return;
+			}
+			d.value += val;
+			
+		}
+		
+	</script>
+</body>
+</html>
